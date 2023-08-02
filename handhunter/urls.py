@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from core.views import *
 from worker.views import *
+from news.views import news_list, news_detail
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView
@@ -47,7 +48,11 @@ urlpatterns = [
     path('sign-out/', sign_out, name='sign-out'),
     path('create-company/', create_company, name='create-company'),
     path('company-edit/<int:id>/', company_update, name='edit-company'),
-    path('recruit/', include('recruit.urls'))
+    path('recruit/', include('recruit.urls')),
+    path('news/', news_list),
+    path('news/<int:id>/', news_detail, name='news-info'),
+    # path('news_create/', ArticleNewCreateView.as_view(), name='create-news')
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 # ...:8000/static/my_style.css  #  .../handhunter/core/static/my_style.css
 

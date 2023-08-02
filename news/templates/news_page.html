@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p></p><p></p><p></p>
+
+    <h2>Новость: "{{ news_object.title }}"</h2>
+<hr>
+    <div>
+        <h2>Описание новости:<p></p>"{{ news_object.text }}"</h2>
+    </div>
+<p></p><p></p><p></p><p></p><p></p><p></p>
+   Дата публикации: {{ news_object.created_at }}
+{% endblock %}

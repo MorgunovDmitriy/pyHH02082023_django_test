@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p></p><p></p>
+<h1>НОВОСТИ</h1>
+<p></p>
+    {% for n in news %}
+            <div>
+                 <a>
+                     {{ n.title }}
+                 </a>
+                     - {{ n.created_at }}
+            </div>
+    {% endfor %}
+
+{% endblock %}
